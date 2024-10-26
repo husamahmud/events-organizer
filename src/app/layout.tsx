@@ -2,6 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 
 import { Roboto } from 'next/font/google'
+import { Toaster } from '@/components/ui/toaster'
 import './globals.css'
 
 const roboto = Roboto({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{
     <html lang="en">
     <body className={`${roboto.variable} font-roboto bg-background text-foreground`}>
     {children}
+    <Toaster />
     </body>
     </html>
   )

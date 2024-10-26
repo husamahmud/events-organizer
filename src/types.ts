@@ -60,4 +60,5 @@ export type RegisterState = {
 
 export type FormState = {
   message: string | null
+  status?: string
 }

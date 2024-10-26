@@ -63,7 +63,7 @@ export const signin = async ({ email, password }: {
   const correctPW = await comparePW(password, match.password)
   if (!correctPW) throw new Error('invalid user')
 
-  const token = createTokenForUser(match.id)
+  const token = await createTokenForUser(match.id)
   const { password: pw, ...user } = match
 
   return { user, token }

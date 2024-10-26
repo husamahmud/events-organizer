@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { useFormState } from 'react-dom'
+import { useEffect } from 'react'
 
 import {
   Card,
@@ -12,12 +12,11 @@ import {
 } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { useToast } from '@/hooks/use-toast'
 
-import { loginUser } from '@/actions/auth_actions'
+import { registerUser } from '@/actions/auth_actions'
 import { FormState } from '@/types'
 import SubmitButton from '@/components/SubmitButton'
-import { useToast } from '@/hooks/use-toast'
-import { useEffect } from 'react'
 
 const initialState: FormState = {
   message: null,
@@ -25,7 +24,7 @@ const initialState: FormState = {
 
 export default function Page() {
   const [formState, action] = useFormState<FormState, FormData>(
-    loginUser, initialState,
+    registerUser, initialState,
   )
   const { toast } = useToast()
 
@@ -42,9 +41,9 @@ export default function Page() {
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
-        <CardTitle className="text-2xl">Login</CardTitle>
+        <CardTitle className="text-2xl">Signup</CardTitle>
         <CardDescription>
-          Login to create an account
+          Sign up to create an account
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -60,7 +59,6 @@ export default function Page() {
                 required
               />
             </div>
-
             <div className="grid gap-2">
               <div className="flex items-center">
                 <Label htmlFor="password">Password</Label>
@@ -71,15 +69,7 @@ export default function Page() {
                      required />
             </div>
 
-            <SubmitButton lable="Login" />
-
-            <div className="mt-2 text-center text-sm">
-              Don&apos;t have an account?{' '}
-              <Link href="/signup"
-                    className="underline">
-                Sign up
-              </Link>
-            </div>
+            <SubmitButton lable="Sign up" />
           </div>
         </form>
       </CardContent>

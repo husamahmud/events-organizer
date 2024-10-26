@@ -1,0 +1,3 @@
+- `'use server'` is the same as `import 'server-only'`
+- `NextUI` is nuts
+- `useFormState` and `useFormStatus` 

@@ -1,3 +1,4 @@
 - `'use server'` is the same as `import 'server-only'`
 - `NextUI` is nuts
-- `useFormState` and `useFormStatus` 
+- `useFormState` and `useFormStatus`
+- `Parallel Routes` - allows you to render one or more routes at the same time

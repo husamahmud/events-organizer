@@ -45,7 +45,7 @@ export const registerUser = async (prevState: FormState, formData: FormData): Pr
     }
   }
 
-  redirect('/')
+  redirect('/dashbaord')
 }
 
 /**
@@ -77,5 +77,5 @@ export const loginUser = async (prevState: FormState, formData: FormData): Promi
     }
   }
 
-  redirect('/')
+  redirect('/dashbaord')
 }

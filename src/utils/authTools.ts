@@ -6,8 +6,8 @@ import { eq } from 'drizzle-orm'
 
 import { db } from '@/db/db'
 import { users } from '@/db/schema'
+import { SECRET } from '@/utils/constants'
 
-const secret = process.env.SECRET!
 
 /**
  * Creates a JWT token for a user.
@@ -16,7 +16,7 @@ const secret = process.env.SECRET!
  * @returns A promise that resolves to the JWT token.
  */
 export const createTokenForUser = async (userId: string): Promise<string> => {
-  return jwt.sign({ id: userId }, secret)
+  return jwt.sign({ id: userId }, SECRET)
 }
 
 /**
@@ -31,7 +31,7 @@ export const getUserFromToken = async (token: {
   name: string
   value: string
 }) => {
-  const payload = jwt.verify(token.value, secret) as { id: string }
+  const payload = jwt.verify(token.value, SECRET) as { id: string }
 
   return db.query.users.findFirst({
     where: eq(users.id, payload.id),

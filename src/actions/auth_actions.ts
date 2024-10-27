@@ -6,9 +6,7 @@ import { z } from 'zod'
 
 import { signin, signup } from '@/utils/authTools'
 import { FormState, SignupResponse } from '@/types'
-import { toast } from '@/hooks/use-toast'
-
-const COOKIE_NAME = process.env.COOKIE_NAME!
+import { COOKIE_NAME } from '@/utils/constants'
 
 const authSchema = z.object({
   email: z.string().email(),

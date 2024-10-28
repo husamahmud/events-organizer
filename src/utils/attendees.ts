@@ -29,6 +29,7 @@ export const getAttendeesCountForDashboard = memoize(
     persist: true,
     revalidateTags: () => ['dashboard:attendees'],
     suppressWarnings: true,
+    // show logs when debugging and not in production mode
     log: ['datacache', 'verbose', 'dedupe'],
     logid: 'dashboard:attendees',
   },

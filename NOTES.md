@@ -2,3 +2,6 @@
 - `NextUI` is nuts
 - `useFormState` and `useFormStatus`
 - `Parallel Routes` - allows you to render one or more routes at the same time
+- using `cookies()` force next to not cache the page
+    - if you used `cache()` it would be cached even if you used `cookies()`
+- use `memoize` from `nextjs-better-unsable-chache` for better cachnig mechanizm
